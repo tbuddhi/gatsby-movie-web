@@ -55,14 +55,16 @@ color:
       l: &color-gray-4 '#717171'
     black: '#000000'
   brand:
-    primary: &color-brand-primary '#709425'
+    primary: &color-brand-primary '#e0aa00'
     primaryActive: '#709425'
     light: '#709425'
     lightActive: '#709425'
     dark: '#709425'
     darkActive: '#709425'
   special:
-    attention: &color-special-attention orange
+    attention: &color-special-attention 
+    footer: &footer-bg-color '#08223b'
+    themeBg: '#001427'
 # FONT
 font:
   # font options
@@ -127,6 +129,7 @@ heading:
   weight: 600
 line:
   color: *color-gray-4
+  hoverColor: *color-white
 icon:
   color: *color-brand-primary
 
@@ -137,7 +140,7 @@ hero:
     size: *font-size-xxl
     color: *color-white
     lineHeight: *font-line-height-xs
-  background: 'linear-gradient(0deg, #000000, #424456)'
+  background: 'linear-gradient(0deg, #08223b, #08223b)'
 blog:
   h1:
     size: *font-size-s
@@ -148,4 +151,5 @@ header:
     default: 80px
     fixed: 50px;
     homepage: 100px;
-
+footer:
+  bgColor: *footer-bg-color

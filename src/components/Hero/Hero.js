@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { FaArrowDown } from "react-icons/fa/";
+import { FaArrowDown, FaAngleDoubleDown } from "react-icons/fa/";
+import BgVideo from "../../images/mov/bgMov.mp4";
 
 const Hero = props => {
   const { scrollToContent, backgrounds, theme } = props;
@@ -9,11 +10,24 @@ const Hero = props => {
   return (
     <React.Fragment>
       <section className="hero">
+        <video
+          className="video-bg"
+          height="100%"
+          width="100%"
+          loop
+          muted
+          autoPlay
+        >
+          <source
+            src={BgVideo}
+            type="video/mp4"
+          />
+        </video>
         <h1>
-          This is a Movie Web Site
+          Trending Movies <br/> in 2019
         </h1>
         <button onClick={scrollToContent} aria-label="scroll">
-          <FaArrowDown />
+          <FaAngleDoubleDown />
         </button>
       </section>
 
@@ -30,18 +44,24 @@ const Hero = props => {
           justify-content: center;
           min-height: 100vh;
           height: 100px;
-          padding: ${theme.space.inset.l};
-          padding-top: ${theme.header.height.homepage};
+        }
+
+        .video-bg{
+          position: absolute;
+          z-index: 0;
         }
 
         h1 {
+          position: relative;
           text-align: center;
           font-size: ${theme.hero.h1.size};
           margin: ${theme.space.stack.l};
           color: ${theme.hero.h1.color};
           line-height: ${theme.hero.h1.lineHeight};
           text-remove-gap: both 0 "Open Sans";
-
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          
           :global(strong) {
             position: relative;
 
@@ -60,14 +80,14 @@ const Hero = props => {
         }
 
         button {
-          background: ${theme.background.color.brand};
-          border: 0;
+          position: relative;
+          background: none;
+          border: 2px dashed ${theme.color.neutral.gray.e};
           border-radius: 50%;
           font-size: ${theme.font.size.m};
-          padding: ${theme.space.s} ${theme.space.m};
           cursor: pointer;
-          width: ${theme.space.xl};
-          height: ${theme.space.xl};
+          width: 28px;
+          height: 42px;
 
           &:focus {
             outline-style: none;
@@ -75,11 +95,10 @@ const Hero = props => {
           }
 
           :global(svg) {
+            font-size: 1rem;
             position: relative;
             top: 5px;
-            fill: ${theme.color.neutral.white};
-            stroke-width: 40;
-            stroke: ${theme.color.neutral.white};
+            fill: ${theme.color.neutral.gray.e};
             animation-duration: ${theme.time.duration.long};
             animation-name: buttonIconMove;
             animation-iteration-count: infinite;
