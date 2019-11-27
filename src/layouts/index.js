@@ -126,7 +126,8 @@ class Layout extends React.Component {
                     {/* --- STYLES --- */}
                     <style jsx>{`
                       main {
-                        min-height: 80vh;
+                        min-height: calc(100vh - 50px);
+                        background-color: #001427;
                       }
                     `}</style>
                     <style jsx global>{`
@@ -142,7 +143,7 @@ class Layout extends React.Component {
                       }
                       body {
                         font-family: ${this.state.font400loaded
-                          ? "'Open Sans', sans-serif;"
+                          ? "'Open Sans'"
                           : "Arial, sans-serif;"};
                       }
                       h1,
@@ -167,7 +168,7 @@ class Layout extends React.Component {
                         color: #666;
                       }
                       main {
-                        width: auto;
+                        width: 100%;
                         display: block;
                       }
                     `}</style>

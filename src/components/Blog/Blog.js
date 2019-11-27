@@ -25,7 +25,7 @@ const Blog = props => {
       {/* --- STYLES --- */}
       <style jsx>{`
         .main {
-          // background-color: ${theme.color.neutral.black};
+          background-color: ${theme.color.special.themeBg};
         }
 
         ul {
