@@ -36,7 +36,6 @@ const Hero = props => {
         .hero {
           align-items: center;
           background: ${theme.hero.background};
-          // background-image: url(${backgrounds.mobile});
           background-size: cover;
           color: ${theme.text.color.primary.inverse};
           display: flex;
@@ -118,10 +117,6 @@ const Hero = props => {
         }
 
         @from-width tablet {
-          .hero {
-            // background-image: url(${backgrounds.tablet});
-          }
-
           h1 {
             max-width: 90%;
             font-size: ${`calc(${theme.hero.h1.size} * 1.3)`};
@@ -133,10 +128,6 @@ const Hero = props => {
         }
 
         @from-width desktop {
-          .hero {
-            // background-image: url(${backgrounds.desktop});
-          }
-
           h1 {
             max-width: 80%;
             font-size: ${`calc(${theme.hero.h1.size} * 1.5)`};

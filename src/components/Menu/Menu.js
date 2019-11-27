@@ -24,8 +24,6 @@ class Menu extends React.Component {
 
     this.items = [
       { to: "/", label: "Home", icon: FaHome },
-      // { to: "/category/", label: "Categories", icon: FaTag },
-      // { to: "/search/", label: "Search", icon: FaSearch },
       // ...pages,
       { to: "/contact/", label: "Contact", icon: FaEnvelope }
     ];
@@ -165,7 +163,7 @@ class Menu extends React.Component {
         <style jsx>{`
           .menu {
             align-items: center;
-            background: ${theme.color.neutral.white};
+            background: ${theme.color.special.themeBg};
             bottom: 0;
             display: flex;
             flex-grow: 1;

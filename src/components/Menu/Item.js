@@ -49,7 +49,6 @@ const Item = props => {
               color: ${theme.color.neutral.black};
               padding: ${theme.space.inset.s};
               transition: all ${theme.time.duration.default};
-              // border-radius: ${theme.size.radius.small};
               font-weight: ${theme.font.weight.bold};
             }
 

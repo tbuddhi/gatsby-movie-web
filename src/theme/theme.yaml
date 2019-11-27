@@ -63,7 +63,7 @@ color:
     darkActive: '#709425'
   special:
     attention: &color-special-attention 
-    footer: &footer-bg-color '#08223b'
+    footer: &bg-color-1 '#08223b'
     themeBg: '#001427'
 # FONT
 font:
@@ -151,5 +151,6 @@ header:
     default: 80px
     fixed: 50px;
     homepage: 100px;
+  bgColor: *bg-color-1
 footer:
-  bgColor: *footer-bg-color
+  bgColor: *bg-color-1

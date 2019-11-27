@@ -40,6 +40,12 @@ const Blog = props => {
             padding: 0 ${`0 calc(${theme.space.default} * 1.5)`};
           }
         }
+
+        @below tablet {
+          ul{
+            padding: 0;
+          }
+        }
         
       `}</style>
     </React.Fragment>
