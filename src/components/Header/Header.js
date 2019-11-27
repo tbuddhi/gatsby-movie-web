@@ -7,7 +7,7 @@ import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import config from "../../../content/meta/config";
 import Menu from "../Menu";
 
-import avatar from "../../images/jpg/tmovie-logo.png";
+import avatar from "../../images/jpg/avatar.jpg";
 
 class Header extends React.Component {
   state = {
@@ -38,10 +38,10 @@ class Header extends React.Component {
         <header className={`header ${this.getHeaderSize()}`}>
           <Link to="/" className="logoType">
             <div className="logo">
-              <img src={config.gravatarImgMd5=="" ? avatar : config.gravatarImgMd5 } alt={config.siteTitle} />
+              {/* <img src={config.gravatarImgMd5=="" ? avatar : config.gravatarImgMd5 } alt={config.siteTitle} /> */}
             </div>
             <div className="type">
-              {/* <h1>{config.headerTitle}</h1> */}
+              <h1>{config.headerTitle}</h1>
               {/* <h2>{config.headerSubTitle}</h2> */}
             </div>
           </Link>
@@ -69,7 +69,6 @@ class Header extends React.Component {
         {/* --- STYLES --- */}
         <style jsx>{`
           .header {
-            z-index: 1;
             align-items: center;
             justify-content: center;
             background-color: ${theme.color.neutral.white};
@@ -112,16 +111,18 @@ class Header extends React.Component {
           }
 
           .logo {
+            border-radius: 65% 75%;
+            border: 1px solid #eee;
             display: inline-block;
-            height: 60px;
+            height: 44px;
             margin: ${theme.space.inline.default};
             overflow: hidden;
-            width: 120px;
+            width: 44px;
             transition: all 0.5s;
 
             .homepage & {
               height: 60px;
-              width: 120px;
+              width: 60px;
             }
 
             img {
@@ -169,7 +170,7 @@ class Header extends React.Component {
           @from-width desktop {
             .header {
               align-items: center;
-              background-color: rgba(255, 255, 255, 0.7);
+              background-color: ${theme.color.neutral.white};
               display: flex;
               position: absolute;
               top: 0;
@@ -179,7 +180,7 @@ class Header extends React.Component {
 
               &.fixed {
                 height: ${theme.header.height.fixed};
-                background-color: rgba(255, 255, 255, 0.7);
+                background-color: ${theme.color.neutral.white};
                 left: 0;
                 padding: 0 ${theme.space.m};
                 position: fixed;
@@ -218,8 +219,8 @@ class Header extends React.Component {
               margin: ${theme.space.inline.default};
 
               .fixed & {
-                height: 45px;
-                width: 100px;
+                height: 36px;
+                width: 36px;
               }
 
               .header.homepage:not(.fixed) & {

@@ -1,4 +1,7 @@
-import { FaCalendar, FaTag, FaStar } from "react-icons/fa/";
+import { FaArrowRight } from "react-icons/fa/";
+import { FaCalendar } from "react-icons/fa/";
+import { FaTag } from "react-icons/fa/";
+import { FaUser } from "react-icons/fa/";
 import Img from "gatsby-image";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
@@ -29,18 +32,18 @@ const Item = props => {
             <Img fluid={fluid} />
           </div>
           <h1>
-            {title} 
+            {title} <FaArrowRight className="arrow" />
           </h1>
           <p className="meta">
             <span>
-              <FaCalendar size={10} /> {prefix}
+              <FaCalendar size={18} /> {prefix}
             </span>
             <span>
-              <FaStar size={10} /> {author}
-            </span><br/>
+              <FaUser size={18} /> {author}
+            </span>
             {category && (
               <span>
-                <FaTag size={10} /> {category}
+                <FaTag size={18} /> {category}
               </span>
             )}
           </p>
@@ -52,7 +55,7 @@ const Item = props => {
       <style jsx>{`
         :global(.link) {
           width: 100%;
-          color: ${theme.text.color.primaryInverse};
+          color: ${theme.text.color.primary};
         }
 
         li {
@@ -68,7 +71,9 @@ const Item = props => {
             border: 1px solid ${theme.line.color};
             overflow: hidden;
           }
-          
+          :global(.gatsby-image-outer-wrapper img) {
+            z-index: -1;
+          }
 
           &::after {
             border-top: 1px solid ${theme.line.color};
@@ -84,7 +89,7 @@ const Item = props => {
 
           &:first-child {
             &::before {
-              // border-top: 1px solid ${theme.line.color};
+              border-top: 1px solid ${theme.line.color};
               content: "";
               height: 0;
               position: absolute;
@@ -113,8 +118,8 @@ const Item = props => {
         .meta {
           display: flex;
           flex-flow: row wrap;
-          font-size: 0.6em;
-          padding: ${theme.space.s};
+          font-size: 0.8em;
+          padding: ${theme.space.m} ${theme.space.s};
           background: transparent;
 
           :global(svg) {
@@ -124,7 +129,7 @@ const Item = props => {
           span {
             align-items: center;
             display: flex;
-            text-transform: capitalize;
+            text-transform: uppercase;
             margin: ${theme.space.xs} ${theme.space.s} ${theme.space.xs} 0;
           }
         }
@@ -133,10 +138,6 @@ const Item = props => {
           line-height: 1.5;
           padding: 0 ${theme.space.s};
           text-remove-gap: both;
-          font-size: 0.8rem;
-          font-weight: ${theme.font.weight.standard};
-          margin-bottom: ${theme.space.s};
-          letter-spacing: 0.5px;
         }
 
         @from-width tablet {
@@ -176,12 +177,11 @@ const Item = props => {
           }
           li {
             &:hover {
-              border: 1px solid ${theme.line.hoverColor};
+              border: 1px solid ${theme.line.color};
               box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.03);
 
               &:after {
                 bottom: ${`calc(${theme.space.default} * -2.5)`};
-                border: 1px solid ${theme.line.hoverColor};
               }
               :global(.gatsby-image-wrapper) {
                 transform: scale(1.1);

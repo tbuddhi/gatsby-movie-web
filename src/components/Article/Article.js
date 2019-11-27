@@ -13,7 +13,6 @@ const Article = props => {
         .article {
           padding: ${theme.space.inset.default};
           margin: 0 auto;
-          color: ${theme.text.color.primaryInverse};
         }
         @from-width tablet {
           .article {

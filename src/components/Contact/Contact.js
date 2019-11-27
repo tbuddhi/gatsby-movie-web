@@ -116,11 +116,8 @@ const Contact = props => {
                 line-height: 1em;
               }
               .form :global(.ant-form-item-label) {
-                line-height: 1.2em;
+                line-height: 1em;
                 margin-bottom: 0.5em;
-              }
-              .form :global(.ant-form-item-label > label) {
-                color: ${theme.text.color.primaryInverse};
               }
               .form :global(.ant-form-item) {
                 margin: 0;
@@ -130,9 +127,6 @@ const Contact = props => {
                 height: auto;
                 font-size: 1.2em;
                 padding: 0.5em 0.6em;
-                border-radius: 0;
-                background-color: ${theme.color.special.themeBg};
-                color: ${theme.text.color.primaryInverse};
               }
               .form :global(.ant-btn-primary) {
                 height: auto;
@@ -140,7 +134,6 @@ const Contact = props => {
                 padding: 0.5em 3em;
                 background: ${theme.color.brand.primary};
                 border: 1px solid ${theme.color.brand.primary};
-                border-radius: 0;
               }
               .form :global(.ant-form-explain) {
                 margin-top: 0.2em;
