@@ -22,11 +22,11 @@ const Footer = props => {
             list-style: none;
             text-align: center;
             padding: 0;
+            margin-bottom: 50px;
 
             :global(li) {
               color: ${theme.color.neutral.gray.g};
               font-size: ${theme.font.size.xxs};
-              // padding: ${theme.space.xxs} ${theme.space.s};
               position: relative;
               display: inline-block;
 
@@ -38,6 +38,12 @@ const Footer = props => {
               &:last-child::after {
                 content: "";
               }
+            }
+          }
+
+          @above desktop{
+            :global(ul) {
+              margin-bottom: 0;
             }
           }
         }

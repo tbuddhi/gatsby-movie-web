@@ -40,10 +40,6 @@ class Header extends React.Component {
             <div className="logo">
               <img src={config.gravatarImgMd5=="" ? avatar : config.gravatarImgMd5 } alt={config.siteTitle} />
             </div>
-            <div className="type">
-              {/* <h1>{config.headerTitle}</h1> */}
-              {/* <h2>{config.headerSubTitle}</h2> */}
-            </div>
           </Link>
           <FontLoadedContext.Consumer>
             {loaded => (
@@ -72,7 +68,7 @@ class Header extends React.Component {
             z-index: 1;
             align-items: center;
             justify-content: center;
-            background-color: ${theme.color.neutral.white};
+            background-color: ${theme.header.bgColor};
             display: flex;
             height: ${theme.header.height.default};
             position: relative;
